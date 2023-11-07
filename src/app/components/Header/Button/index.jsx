@@ -14,12 +14,21 @@ const Button = ({ isActive, setIsActive }) => {
         transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
       >
         <div className={styles.el}>
-          <p>Menu</p>
+          <PerspectiveText label="menu" />
         </div>
         <div className={styles.el}>
-          <p>Close</p>
+          <PerspectiveText label="close" />
         </div>
       </motion.div>
+    </div>
+  )
+}
+
+const PerspectiveText = ({ label }) => {
+  return (
+    <div className={styles.perspectiveText}>
+      <p>{label}</p>
+      <p>{label}</p>
     </div>
   )
 }
