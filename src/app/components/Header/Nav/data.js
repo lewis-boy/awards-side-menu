@@ -20,3 +20,22 @@ export const Links = [
     href: "/",
   },
 ]
+
+export const FooterLinks = [
+  {
+    title: "Facebook",
+    href: "/",
+  },
+  {
+    title: "LinkedIn",
+    href: "/",
+  },
+  {
+    title: "Instagram",
+    href: "/",
+  },
+  {
+    title: "Twitter",
+    href: "/",
+  },
+]
