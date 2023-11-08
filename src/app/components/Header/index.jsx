@@ -2,7 +2,8 @@
 import React, { useState } from "react"
 import styles from "./style.module.scss"
 import Button from "./Button"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+import Nav from "./Nav"
 
 const variants = {
   open: {
@@ -17,7 +18,7 @@ const variants = {
     height: 40,
     top: "0px",
     right: "0px",
-    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 0.5, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
   },
 }
 
@@ -31,7 +32,10 @@ const Header = () => {
         variants={variants}
         animate={isActive ? "open" : "closed"}
         initial="closed"
-      ></motion.div>
+      >
+        {/* before unmounting, trigger your exit animation. use AnimatePresence */}
+        <AnimatePresence>{isActive && <Nav />}</AnimatePresence>
+      </motion.div>
       <Button
         isActive={isActive}
         setIsActive={setIsActive}
